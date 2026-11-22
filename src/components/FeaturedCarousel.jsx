@@ -6,18 +6,21 @@ import { ArrowRight, Calendar, ChevronLeft, ChevronRight, MapPin, Sparkles } fro
 import { Badge } from './ui/badge'
 import { Link } from 'react-router'
 import { formatEventDate, formatPrice } from '@/lib/utils'
+// import { formatEventDate, formatPrice } from '@/lib/utils'
 
 
 
-function FeaturedCarousel({ events }) {
+function FeaturedCarousel({events}) {
 
+ 
+  
   const [ selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({
       delay: 4000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
-      rootNode: (emblaRoot) => emblaRoot.parentElement,
+    //   rootNode: (emblaRoot) => emblaRoot.parentElement,
     })
   ])
 
@@ -164,7 +167,12 @@ function FeaturedCarousel({ events }) {
         <ChevronRight className="w-6 h-6" />
       </button>
 
-        <div className="absolute bottom-4 right-6 flex items-center gap-2 z-20">
+        
+      
+        
+          
+
+ <div className="absolute bottom-4 right-6 flex items-center gap-2 z-20">
         {events.map((_, i) => (
           <button
             key={i}
@@ -177,11 +185,38 @@ function FeaturedCarousel({ events }) {
           />
         ))}
       </div>
+           
+           
+         
+            
+        
+        
+      </div>
 
-    </div>
+
 
 
   )
 }
 
 export default FeaturedCarousel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

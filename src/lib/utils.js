@@ -1,10 +1,11 @@
 export { cn } from "cn";
+
 import { format, formatDistanceToNow, parseISO } from "date-fns";
 
 export function formatPrice(amount, currency = "INR") {
   const value = Number(amount);
 
-  if (!value) {
+  if(!value){
     return "Free";
   }
 
@@ -20,7 +21,7 @@ export function formatEventDate(dateInput) {
     return;
   }
 
-  const date = parseISO(dateInput);
+  const date = parseISO(dateInput);      
 
 
   return format(date, "E, LLL dd, yyyy");
