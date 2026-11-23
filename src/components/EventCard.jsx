@@ -1,5 +1,7 @@
 import { formatEventDate, formatPrice } from "@/lib/utils";
+import { endOfToday } from "date-fns";
 import { Bookmark, Calendar } from "lucide-react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 
 
@@ -18,9 +20,9 @@ export default function EventCard({ event }) {
     category: { name },
   } = event;
 
-  // const dispatch = useDispatch();
-  // const state = useSelector((state) => state.favorites.name);
-  // console.log(state);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.favorites.name);
+  console.log(state);
 
   return (
     <Link
@@ -42,9 +44,13 @@ export default function EventCard({ event }) {
 
             <button
        
-              //   e.preventDefault();
-              //  dispatch(toggleFavorites("dhruv"));
-              //  }}
+               onClick={(e) => {
+                e.preventDefault()
+                console.log("sahil");
+                
+               }}
+           
+           
               type="button"
               className="pointer-events-auto w-8 h-8 rounded-full bg-white/90 backdrop-blur-md shadow-sm border border-black/5 flex items-center justify-center hover:bg-white hover:scale-110 active:scale-95 transition-all text-stone-700 hover:text-stone-900 cursor-pointer text-xs"
             >
